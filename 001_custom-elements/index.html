@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Test</title>
+    <!-- Polyfill for IE/Edge -->
+    <script type="text/javascript" src="https://unpkg.com/@webcomponents/webcomponentsjs@2.2.0/webcomponents-loader.js"></script>
+    <script type="module">
+        WebComponents.waitFor(() => {
+            console.log("Let's roll!")
+            return Promise.resolve();
+        });
+    </script>
+    <!-- Native code splitting with modules -->
+    <script type="module" src="app.js"></script>
+</head>
+
+<body>
+    <!-- page content -->
+    <div id="app">
+    </div>
+</body>
+
+</html>

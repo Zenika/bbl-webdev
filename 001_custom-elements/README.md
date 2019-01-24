@@ -16,7 +16,7 @@ This examples showcases:
 You need an http server to run this example.
 
 ```
-npm -i http-server
+npm i http-server
 
 http-server .
 ```

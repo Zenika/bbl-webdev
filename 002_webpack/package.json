@@ -1,0 +1,20 @@
+{
+  "name": "002_webpack",
+  "version": "1.0.0",
+  "description": "Live coding done during session #2 on 23/01/2019.",
+  "main": "app.js",
+  "scripts": {
+    "start": "webpack && webpack-dev-server --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "moment": "^2.24.0"
+  }
+}

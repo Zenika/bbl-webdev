@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Web Components - BBL</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 2rem;
+      font-family: sans-serif;
+    }
+    /* try this it overrides slot color
+    h1 {
+      color: green;
+    }
+    */
+  </style>
+  <script src="modal.js"></script>
+</head>
+<body>
+  <h1>Modal Confirmation Dialog Web Component</h1>
+  <button>Test it out!</button>
+  <modal-confirm>
+    <h1 slot="title">Named Slot: Please Confirm...</h1>
+    <p id="message">Default Slot: Do you want to proceed?</p>
+  </modal-confirm>
+  <script>
+    const modal = document.querySelector('modal-confirm')
+    modal.addEventListener('confirm', (e) => console.log('confirmed', e.target))
+    modal.addEventListener('cancel', (e) => console.log('cancel', e.target))
+    document.querySelector('button').addEventListener('click', () => modal.open())
+  </script>
+</body>
+</html>

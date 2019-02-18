@@ -6,30 +6,31 @@ Live coding done during session #2 on 14/02/2019.
 
 **Pre-requisites - very basic knowledge on web-components, JS, CSS, HTML**
 
-We will create a modal dialog as web components using shadow DOM so as to avoid pollution/leaking in/out of CSS styles, DOM id collisions
+We will create a modal dialog as web components using shadow DOM so as to avoid pollution/leaking in/out of CSS styles, DOM id collisions.
+We will start with an empty modal.js file for that.
 
-### 1 Create a modal with the following
+### 1 Create an HTML-based modal dialog with:
 
-a) backdrop to prevent other events/interactions from happening
-b) the modal dialog itself with
- - using attriute to control open and close of modal
- - slot and named slot for modal body and header text
+#### a) a backdrop to prevent other events/interactions from happening
+#### b) the modal dialog itself with
+ - an 'open' attribute to control the state of the modal
+ - a named slot and a default slot for the modal title and body
  - ok & cancel buttons (emit events from shadow DOM to lit DOM)
-c) style the web component and slots
-
- - style the Webcomponent using :host
+#### c) an embedded style tag
+ - style the Web Component using :host
  - style the slot using ::slotted
 
 ### 2 Steps
 
-### 2.1 On the HTML
- - create the tags in the html file
- - add modal header text to named slot
- - add modal body text to slot
+### 2.1 In helloworld.js
+ - append a modal dialog at the end of the document body if it does not exist
+ - add modal header text to named slot ("Hello!")
+ - add modal body text to slot ("Hello World!")
  - add event listener for cancel and ok from modal, and their callback functions
- - open the modal on click of button (to test the web-component)
+ - update the targeted name for the Hello inside the modal
+ - open the modal on click of button
 
-### 2.2 On the Component JS file
+### 2.2 In modal.js
  - attach shadow
  - add innerhtml
   - styles
@@ -44,4 +45,4 @@ c) style the web component and slots
  - add eventListener for confirm and ok from modal buttons, and their callback functions
   - emit the events
  - create open and close functions
- - style the slots [If we have time]
+ - style the slots [If you have time]

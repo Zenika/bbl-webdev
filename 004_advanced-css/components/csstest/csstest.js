@@ -12,13 +12,12 @@ export default customElements.define(
 
 <style>
 :host {
-    width: 100%; /* Try 100vw */
     display: block;
     font-size: 1em;
 }
 
 span.bigger {
-    font-size: 1.5em; /* Try rem to see the difference */
+    font-size: 1.5em;
 }
 
 #content {
@@ -27,7 +26,7 @@ span.bigger {
     border: solid 1px black;
     padding: 0em 1.5em 2em 1.5em;
     margin: 2em;
-    height: calc(100vh - 200px); /* Try 100% */
+    height: 100%;
     border-radius: 8px;
     background-color: #3f3f3f;
     color: #ff0000;
@@ -42,25 +41,6 @@ span.bigger {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%; /* 100% works here because it fills the remaining parent's height! */
-    min-height: 200px; /* Try without */
-}
-
-#example:before {
-    z-index: 2;
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    /* The fact that you cannot use Webpack file-loader here is an argument against using images in the Shadow DOM */
-    background: rgba(255,255,255,0) url('/assets/static/znk.png') 0px 0px no-repeat;
-    background-position: center;
-    background-size: contain;
-    opacity: 0.1; /* All this to allow background opacity */
-    pointer-events: none; /* Make this layer not interactive and non blocking */
 }
 
 @media screen and (min-width: 768px) {
@@ -72,32 +52,32 @@ span.bigger {
     }
 }
 
+/* PRACTICE 1.a: Try rem to see the difference and inspect the default user-agent stylesheet as well */
+span.bigger {
+}
+
+/* PRACTICE 1.b: width - Make it full width */
+:host {
+}
+/* PRACTICE 1.b: height - Just by manipulating the height property, make it full height and resize on view */
+#content {
+}
+/* PRACTICE: 1.b: height - Make it full height */
+#example {
+}
+
+/* PRACTICE: 2.a: input - Let's style an input with 'Yes' / 'No' toggling checkbox*/
 label input[type='checkbox'] + span {
     cursor: pointer
 }
-input[type='checkbox'] {
-    display: none;
-}
-input[type='checkbox'] + span:after {
-    display: inline-block;
-    margin-left: 0.5em;
-}
-#content:lang(en) input[type='checkbox']:checked + span:after {
-    content: 'Yes'
-}
-#content:lang(en) input[type='checkbox']:not(:checked) + span:after { /* :not() is useless and just for demo purpose here */
-    content: 'No'
-}
-#content:lang(fr) input[type='checkbox']:checked + span:after {
-    content: 'Oui'
-}
-#content:lang(fr) input[type='checkbox'] + span:after {
-    content: 'Non'
+
+/* PRACTICE: 2.b: overlay - Let's create an opaque overlay */
+#example:before {
 }
 
 </style>
 
-<div id='content' lang='en'> <!-- Add attribute lang='fr 'to test the pseudo class selector -->
+<div id='content' lang='en'> <!-- PRACTICE: BONUS - Add attribute lang='fr 'to test the pseudo class selector -->
     <h1>Let us test some CSS!</h1>
     <h2>Because it's fun!!</h2>
     <p>But so damn technical...</p>

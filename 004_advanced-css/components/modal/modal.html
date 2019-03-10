@@ -49,30 +49,18 @@
       background-color: var(--ok-bg-color, green);
     }
 
-    /* Adding fade effect with a transition */
+    /* PRACTICE 3.a: transition: Add fade in/out effect with a transition */
     :host([opening]) #modal {
-      transition: opacity 0.6s ease-out;
-      animation: 0.6s ease-out 0s jump-in;
     }
     :host([closing]) #modal {
-      transition: opacity 1.5s ease-in;
-      animation: 1.5s ease-in 0s reverse jump-in;
     }
-    /* Adding some movement with an animation */
+    /* PRACTICE 3.b: Create the jump-in animation that goes right then center, starting from the bottom */
     @keyframes jump-in {
-      0% {
-        top: 100vh;
-        left: 0%;
-      }
-      60% {
-        top: 50vh;
-        left: 80%;
-        transform: rotate(180deg);
-      }
-      100% {
-        top: 15vh;
-        left: 25%;
-      }
+    }
+    /* PRACTICE 3.b: Add the animation */
+    :host([opening]) #modal {
+    }
+    :host([closing]) #modal {
     }
   </style>
 

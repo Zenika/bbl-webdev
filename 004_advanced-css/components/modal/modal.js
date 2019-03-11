@@ -30,19 +30,25 @@ export default class Modal extends HTMLElement {
 
   open () {
     // Trigger animation / transition
-    this.setAttribute('opening', '');
+    if (this.hasAttribute('closing')) this.removeAttribute('closing')
     setTimeout(() => {
-      this.removeAttribute('opening');
-    }, 700);
-    if (!this.hasAttribute('opened')) this.setAttribute('opened', '')
+      this.setAttribute('opening', '');
+      setTimeout(() => {
+        this.removeAttribute('opening');
+      }, 700);
+      if (!this.hasAttribute('opened')) this.setAttribute('opened', '')
+    }, 0);
   }
   hide () {
     // Trigger animation / transition
-    this.setAttribute('closing', '');
+    if (this.hasAttribute('opening')) this.removeAttribute('opening')
     setTimeout(() => {
-      this.removeAttribute('closing');
-    }, 1600);
-    if (this.hasAttribute('opened')) this.removeAttribute('opened')
+      this.setAttribute('closing', '');
+      setTimeout(() => {
+        this.removeAttribute('closing');
+      }, 1600);
+      if (this.hasAttribute('opened')) this.removeAttribute('opened')
+    }, 0);
   }
 
   // 2 ways to dispatch events

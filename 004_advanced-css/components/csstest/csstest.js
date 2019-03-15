@@ -55,11 +55,11 @@ span.bigger {
     bottom: 0;
     left: 0;
     right: 0;
-    /* The fact that you cannot use Webpack file-loader here is an argument against using images in the Shadow DOM */
+    /* You cannot use Webpack file-loader here */
     background: rgba(255,255,255,0) url('/assets/static/znk.png') 0px 0px no-repeat;
     background-position: center;
     background-size: contain;
-    opacity: 0.1; /* All this to allow background opacity */
+    opacity: 0.1; /* All of this to allow background opacity */
     pointer-events: none; /* Make this layer not interactive and non blocking */
 }
 

@@ -1,5 +1,4 @@
-# Brown Bag Lunch 4 Web Dev - Shadow Dom
-
+# Brown Bag Lunch 4 Web Dev - Advanced CSS
 Live coding done during session #2 on 14/03/2019.
 
 ## Lesson Plan
